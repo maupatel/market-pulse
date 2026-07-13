@@ -65,12 +65,23 @@ def append_history(quotes):
         writer.writerows(quotes)
 
 
+def format_change(quote):
+    prev = quote.get("prev_close")
+    if not prev:
+        return "n/a"
+    pct = (float(quote["close"]) - float(prev)) / float(prev) * 100
+    arrow = "🔺" if pct > 0 else ("🔻" if pct < 0 else "▪️")
+    return f"{arrow} {pct:+.2f}%"
+
+
 def update_readme(quotes):
     stamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     lines = [MARKER_START, f"_Last run: {stamp}_", ""]
-    lines += ["| Index | Session date | Close |", "|---|---|---|"]
+    lines += ["| Index | Session date | Close | Change |", "|---|---|---|---|"]
     for q in quotes:
-        lines.append(f"| {q['name']} | {q['date']} | {q['close']} |")
+        lines.append(
+            f"| {q['name']} | {q['date']} | {q['close']} | {format_change(q)} |"
+        )
     lines.append(MARKER_END)
     block = "\n".join(lines)
 

@@ -1,0 +1,31 @@
+name: Daily pulse
+
+on:
+  schedule:
+    - cron: "37 13 * * 1-5"   # 13:37 UTC, weekdays (morning US Central)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  pulse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run pipeline
+        run: python pulse.py
+
+      - name: Commit snapshot
+        run: |
+          git config user.name "Maulik Patel"
+          git config user.email "maulik737@gmail.com"
+          git add data/history.csv README.md
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "data: daily pulse $(date -u +%Y-%m-%d)"
+          git push

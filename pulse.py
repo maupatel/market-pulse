@@ -16,6 +16,8 @@ SYMBOLS = {
     "^GSPC": "S&P 500",
     "^IXIC": "Nasdaq Composite",
     "^DJI": "Dow Jones",
+    "^VIX": "VIX",
+    "^TNX": "10-Year Treasury Yield",
 }
 CHART_URL = "https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?range=1d&interval=1d"
 USER_AGENT = "Mozilla/5.0 (market-pulse; +https://github.com/maupatel/market-pulse)"

@@ -13,15 +13,15 @@ No servers, no credentials, no dependencies. Python stdlib + cron + git as the s
 ## Latest
 
 <!-- pulse:start -->
-_Last run: 2026-10-08 19:22 UTC_
+_Last run: 2026-10-09 18:56 UTC_
 
 | Index | Session date | Close | Change |
 |---|---|---|---|
-| S&P 500 | 2026-10-08 | 7760.32 | 🔻 -0.53% |
-| Nasdaq Composite | 2026-10-08 | 27171.94 | 🔻 -1.33% |
-| Dow Jones | 2026-10-08 | 51190.68 | 🔺 +0.02% |
-| VIX | 2026-10-08 | 15.7 | 🔺 +4.11% |
-| 10-Year Treasury Yield | 2026-10-08 | 5.23 | 🔻 -0.89% |
+| S&P 500 | 2026-10-09 | 7814.17 | 🔺 +0.63% |
+| Nasdaq Composite | 2026-10-09 | 27367.33 | 🔺 +0.64% |
+| Dow Jones | 2026-10-09 | 51718.24 | 🔺 +0.95% |
+| VIX | 2026-10-09 | 14.87 | 🔻 -3.50% |
+| 10-Year Treasury Yield | 2026-10-09 | 5.25 | 🔺 +0.36% |
 <!-- pulse:end -->
 
 ## Why this exists
